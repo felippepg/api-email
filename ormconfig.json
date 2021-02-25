@@ -1,0 +1,13 @@
+{
+    "type" : "mysql",
+    "host": "127.0.0.1",
+    "password": "2502",
+    "username": "root",
+    "database": "api_typescript",
+    "migrations": ["src/database/migrations/**ts"],
+    "entities": ["src/models/**ts"],
+    "cli": {
+        "migrationsDir": "src/database/migrations"
+    }
+}
+
