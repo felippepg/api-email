@@ -16,7 +16,7 @@ class UserController {
         })
 
         await userRepository.save(user);
-        res.send(201)
+        res.sendStatus(201);
     }
 
     @Get()

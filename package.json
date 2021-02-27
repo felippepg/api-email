@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start:dev": "ts-node-dev src/server.ts",
+    "start:dev": " NODE_ENV=prod ts-node-dev src/server.ts",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
-    "test":  "jest"
+    "test":  "NODE_ENV=test jest  --forceExit"
   },
   "dependencies": {
     "@overnightjs/core": "^1.7.5",
