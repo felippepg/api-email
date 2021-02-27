@@ -1,4 +1,4 @@
-{
+{   
     "type" : "mysql",
     "host": "127.0.0.1",
     "password": "2502",
@@ -9,5 +9,5 @@
     "cli": {
         "migrationsDir": "src/database/migrations"
     }
+    
 }
-

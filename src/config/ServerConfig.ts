@@ -1,5 +1,5 @@
 import { Server } from '@overnightjs/core';
-import express from 'express';
+import express, { Application } from 'express';
 import UserController from '../ controller/User';
 
 class ServerConfig extends Server {
@@ -11,8 +11,11 @@ class ServerConfig extends Server {
     public init(): void {
         this.middlewares();
         this.setupController();
-        this.app.listen(this.port, ()=> {
-            console.log('running server on port: ' + this.port)
+    }
+
+    public start(): void {
+        this.app.listen(this.port, () => {
+            console.log('Server is running on port: ' + this.port)
         })
     }
 
@@ -24,6 +27,10 @@ class ServerConfig extends Server {
     private setupController(): void {
         this.addControllers([UserController]);
     }
+
+    public getApplication(): Application {
+        return this.app
+    }
 }
 
-export default ServerConfig
+export default  ServerConfig

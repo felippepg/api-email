@@ -1,5 +1,3 @@
-import { createConnection } from 'typeorm';
+import { Connection, createConnection } from 'typeorm';
 
 createConnection()
-    .then(connection => console.log('conectado '))
-    .catch(err => console.log('Deu erro: ' + err))

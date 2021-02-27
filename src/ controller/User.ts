@@ -1,4 +1,4 @@
-import { Controller, Post } from '@overnightjs/core';
+import { Controller, Get, Post } from '@overnightjs/core';
 import { Request, Response } from 'express';
 import { getCustomRepository } from 'typeorm';
 import UserRepository from '../repository/UserRepository';
@@ -16,7 +16,12 @@ class UserController {
         })
 
         await userRepository.save(user);
-        res.send(user);
+        res.send(201)
+    }
+
+    @Get()
+    public async testJest(req: Request, res: Response) {
+       res.send('true')
     }
 
 }
