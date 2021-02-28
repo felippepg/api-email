@@ -1,6 +1,8 @@
 import { Server } from '@overnightjs/core';
 import express, { Application } from 'express';
 import UserController from '../ controller/User';
+import SurveyController from '../ controller/Surveys';
+import SurveyUserContrller from '../ controller/SurveyUser';
 
 class ServerConfig extends Server {
 
@@ -25,7 +27,11 @@ class ServerConfig extends Server {
     }
 
     private setupController(): void {
-        this.addControllers([UserController]);
+        this.addControllers([
+            UserController, 
+            SurveyController,
+            SurveyUserContrller
+        ]);
     }
 
     public getApplication(): Application {
