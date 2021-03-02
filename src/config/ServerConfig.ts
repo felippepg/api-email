@@ -24,6 +24,12 @@ class ServerConfig extends Server {
     private middlewares(): void {
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true}))
+        this.app.use('/teste/', (req, res) => {
+            let rating = req.query.titulo?.toString();
+            if(rating) {
+                res.send(rating.replace("[^0-9a-zA-Z]+", ""))
+            }
+        })
     }
 
     private setupController(): void {
